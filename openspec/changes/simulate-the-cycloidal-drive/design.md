@@ -2,7 +2,7 @@
 
 The upstream project contains no source model or build instructions beyond its title and MIT licence. Its mechanical source is a set of STEP documents: V1-V4 of a cycloidal reducer and a separate strain-wave reducer. V4 is the newest revision and its document identifies an input shaft, eccentric cam, nested output assembly, two cycloidal discs, bearings, an HTD pulley assembly, and two anonymously named `COMPOUND` products.
 
-The V4 document is an assembly, not a set of loose print files. A `solid import-step` survey shows that most products are authored at the document identity, that the transmission axis is +Y, that the pulley occurrence is rotated -90 degrees about X and translated to Y = 81 mm relative to its nested assembly (109 mm inside a parent placed at 190 mm), and that the discs share a -9 degree rest rotation about Y with opposing XZ offsets `(-0.782172325, 0, -0.061558297)` and `(0.782172325, 0, 0.061558297)` mm. Those occurrence values are evidence from the source document, not inferred dimensions.
+The V4 document is an assembly, not a set of loose print files. A `solid import-step` survey shows that most products are authored at the document identity, that the transmission axis is +Y, that the pulley occurrence is rotated -90 degrees about X and translated to Y = 81 mm relative to its nested assembly (109 mm inside a parent placed at 190 mm), and that the discs share a -9 degree rest rotation about Y with opposing XZ translations `(-0.782172325, 0, -0.061558297)` and `(0.782172325, 0, 0.061558297)` mm. Radial measurement of the product geometry shows that each disc centre is 5 mm from the input axis; the smaller translations are the chord corrections that hold those eccentric centres while applying the authored -9 degree phase. Those occurrence values are evidence from the source document, not inferred dimensions.
 
 The generated scaffold also reveals two import hazards: an identity-only nested assembly needs an explicit no-op body to remain valid Python, and the document has two different products both named `COMPOUND`, which the public `StepNode` selector correctly treats as ambiguous. The implementation must preserve an honest inventory rather than silently select one.
 
@@ -11,8 +11,8 @@ The generated scaffold also reveals two import hazards: an identity-only nested 
 - The machine frame is the V4 root-product frame.
 - The reduction axis is +Y and the origin is the authored shaft/cam/bearing centreline.
 - `input_angle` is degrees of positive rotation about +Y from the authored STEP pose.
-- Disc orbit phase is measured about +Y from each disc's authored eccentric offset. The two disc centres remain 180 degrees apart.
-- Output angle is measured about +Y from the authored output pose and has the opposite sign to the input for the one-pin-difference cycloidal stage.
+- Disc orbit phase is measured about +Y from each disc's authored 5 mm eccentric offset. The two disc centres remain 180 degrees apart.
+- Output angle is measured about +Y from the authored output pose and moves opposite the input at the measured 20:1 ratio of the one-pin-difference cycloidal stage.
 
 ## Goals / Non-Goals
 
@@ -48,7 +48,7 @@ The import scaffold's occurrence transforms and a repeatable probe are recorded 
 
 ### Drive the mechanism from input angle only
 
-The machine has one actuator-level meaning: input-shaft angle. Shaft, cam, and input pulley turn together. Each disc centre orbits at input speed, the discs remain opposed, and each disc counter-rotates by the reduction derived independently from the counted ring pins and disc lobes. The output follows that same reduced angle. Per-part sliders would expose wiring rather than the machine.
+The machine has one actuator-level meaning: input-shaft angle. Shaft, cam, and input pulley turn together. Each 5 mm-eccentric disc centre orbits at input speed, the discs remain opposed, and each disc counter-rotates at 1/20 input speed. The output follows that same reduced angle. The ratio is fixed by the measured 20-lobe disc and its one-pin-difference ring, not by a user knob. Per-part sliders would expose wiring rather than the machine.
 
 ### Treat source-authored interference as an inventory
 
@@ -60,7 +60,8 @@ The STEP document may model bearing fits or coincident solids with positive over
 
 ## Findings
 
-- The two discs are authored with equal-and-opposite eccentric offsets of approximately 0.78459 mm, providing direct evidence for their 180-degree balance phase.
+- The two discs are authored on equal-and-opposite 5 mm eccentric centres, providing direct evidence for their 180-degree balance phase. The approximately 0.78459 mm occurrence translations are chord corrections for the shared -9 degree rest phase, not the eccentric radius.
+- Fourier analysis of the disc's measured radial profile has a dominant 20th harmonic and the rendered profile visibly carries 20 lobes. With the source's one-pin-difference ring this establishes a 20:1 reverse reduction.
 - All observed drive-axis rotations are about +Y.
 - The document contains two distinct products named `COMPOUND`; the public STEP selector cannot disambiguate them by name.
 - The repository supplies no BOM, tooth/pin counts, motor speed, tolerance, or assembly narrative. Counts and clearances therefore have to be measured from geometry and documented as findings, while speed remains a stated demo-only choice.

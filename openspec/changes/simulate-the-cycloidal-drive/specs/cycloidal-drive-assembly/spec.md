@@ -12,11 +12,11 @@ The simulation SHALL import each uniquely selectable product used by the cycloid
 - **THEN** the simulation records both as an import limitation instead of choosing either silently
 
 ### Requirement: Authored V4 placements are preserved
-The simulation SHALL place the input stack, paired cycloidal discs, output assembly, bearings, and pulley from the V4 occurrence transforms, with the reduction axis on +Y and the two disc centres at equal-and-opposite eccentric offsets.
+The simulation SHALL place the input stack, paired cycloidal discs, output assembly, bearings, and pulley from the V4 occurrence transforms, with the reduction axis on +Y and the two disc centres at equal-and-opposite 5 mm eccentric offsets.
 
 #### Scenario: Opposed disc centres
 - **WHEN** the machine is at its authored home pose
-- **THEN** the midpoint of the two disc centres lies on the input axis and their radial distances from it agree within 0.01 mm
+- **THEN** the midpoint of the two disc centres lies on the input axis and both radial distances are 5 mm within 0.01 mm
 
 #### Scenario: Source placement drift
 - **WHEN** the recorded occurrence inventory is checked against the V4 document
