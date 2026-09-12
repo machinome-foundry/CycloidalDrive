@@ -1,0 +1,5 @@
+_build*/
+screenshot.png
+snapshot*.png
+__pycache__/
+*.py[cod]

@@ -1,4 +1,11 @@
-## ADDED Requirements
+# Cycloidal Drive Motion Specification
+
+## Purpose
+
+Define the single-control kinematics and repeatable demonstration behavior of
+the V4 cycloidal-drive simulation.
+
+## Requirements
 
 ### Requirement: Input angle is the sole machine driver
 The complete drive SHALL expose one `input_angle` control in degrees and SHALL derive shaft, cam, pulley, disc-orbit, disc-spin, and output motion from that value.
@@ -37,9 +44,9 @@ The machine SHALL provide `Home`, `One Input Revolution`, and `One Output Revolu
 - **WHEN** `One Output Revolution` completes
 - **THEN** `input_angle` is exactly 7200 degrees
 
-### Requirement: Demonstrated motion preserves the assembly contract
-The simulation SHALL check rigid-body integrity and the documented overlap inventory throughout every instruction path at a cadence commensurate with the demonstration durations.
+### Requirement: Demonstrated motion preserves the kinematic contract
+The simulation SHALL check reduction ratio, opposed disc balance, and bounded disc/ring engagement throughout every instruction path at a cadence commensurate with the demonstration durations.
 
 #### Scenario: Complete demonstration
 - **WHEN** the three instructions run in sequence
-- **THEN** each instruction lands on its target and no rigid-body overlap outside the documented source inventory appears at any sampled state
+- **THEN** each instruction lands on its target and the driven reduction, disc balance, and ring engagement remain within their documented bounds at every sampled state

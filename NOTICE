@@ -1,0 +1,35 @@
+# Licensing notice
+
+## Upstream CycloidalDrive material — MIT
+
+The root `LICENSE` is the unmodified MIT License for the original
+CycloidalDrive project by James Bruton, Copyright (c) 2021 James Bruton,
+<https://github.com/XRobots/CycloidalDrive>. Upstream CAD, assets, source,
+documentation, and covered exports retain their applicable upstream MIT grant.
+In particular, the V4 STEP document consumed and measured by the simulation
+remains upstream MIT-licensed material. Nothing here claims ownership of its
+design or geometry.
+
+## Foundry-original additions — AGPL-3.0-or-later
+
+Copyright (C) 2026 Luis Henrique Cassis Fagundes. The following original
+simulation software, original supporting documentation and tools, and licensing
+metadata additions are licensed under GNU AGPL version 3 or later:
+
+- `simulation/__init__.py`, `simulation/layout.py`, `simulation/machine.py`,
+  `simulation/parts.py`, `simulation/seats.py`, and
+  `simulation/subassemblies.py`;
+- `simulation/test_machine.py`, `simulation/test_parts.py`,
+  `simulation/test_subassemblies.py`, `simulation/tools/__init__.py`, and
+  `simulation/tools/probe.py`;
+- `simulation/README.md`, `docs/measurements.md`, `CREDITS`, this `NOTICE`,
+  and the licensing section in `README.md`.
+
+Where those additions read, select, import, inspect, or record measurements of
+the upstream V4 STEP document, the upstream document and resulting
+source-derived geometry retain the MIT attribution and grant above. The AGPL
+grant covers Luis Henrique Cassis Fagundes's original expression only; it does
+not relicense upstream materials or outputs containing them.
+
+The AGPL text is `simulation/LICENSE`. This licensing update is recorded on
+2026-09-20 and does not revoke any grant previously made to recipients.

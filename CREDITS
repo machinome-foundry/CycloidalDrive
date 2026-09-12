@@ -1,0 +1,23 @@
+# CycloidalDrive credits
+
+## Original project
+
+CycloidalDrive
+<https://github.com/XRobots/CycloidalDrive>
+
+Copyright (c) 2021 James Bruton
+
+The original project is licensed under the MIT License; the unchanged text is
+at `LICENSE`.
+
+## Simulation and supporting work
+
+The original simulation software, supporting documentation, measurement tools,
+and licensing metadata added in this repository are by Luis Henrique Cassis
+Fagundes (display credit: Luis Fagundes), Copyright (C) 2026 Luis Henrique
+Cassis Fagundes. They are licensed under AGPL-3.0-or-later as scoped in
+`NOTICE`; the license text is at `simulation/LICENSE`.
+
+This credit and license record was added on 2026-09-20. It does not alter the
+copyright, license, or ownership of upstream CAD, assets, exports, or earlier
+materials, and does not revoke any grant previously received by recipients.

@@ -50,9 +50,15 @@ The import scaffold's occurrence transforms and a repeatable probe are recorded 
 
 The machine has one actuator-level meaning: input-shaft angle. Shaft, cam, and input pulley turn together. Each 5 mm-eccentric disc centre orbits at input speed, the discs remain opposed, and each disc counter-rotates at 1/20 input speed. The output follows that same reduced angle. The ratio is fixed by the measured 20-lobe disc and its one-pin-difference ring, not by a user knob. Per-part sliders would expose wiring rather than the machine.
 
-### Treat source-authored interference as an inventory
+### Treat source-authored home-pose interference as an inventory
 
 The STEP document may model bearing fits or coincident solids with positive overlap. Initial exact checks will enumerate those pairs and volumes in `simulation/seats.py`; the root contract will require exactly that measured set. No epsilon or blanket exemption is introduced, so any new, changed, or removed overlap remains visible.
+
+The imported disc tessellation proved non-manifold, so it cannot support a
+faceted Boolean inventory through motion. The moving scenario instead samples
+the derived ratio, opposed eccentric centres, and bounded disc/ring gap every
+five seconds. This retains a meaningful moving contract without promoting a
+mesh failure into a false collision-free claim.
 
 ### Keep the demonstration small
 
@@ -65,6 +71,9 @@ The STEP document may model bearing fits or coincident solids with positive over
 - All observed drive-axis rotations are about +Y.
 - The document contains two distinct products named `COMPOUND`; the public STEP selector cannot disambiguate them by name.
 - The repository supplies no BOM, tooth/pin counts, motor speed, tolerance, or assembly narrative. Counts and clearances therefore have to be measured from geometry and documented as findings, while speed remains a stated demo-only choice.
+- Exact home-pose checks find 20 positive-volume contacts, all between disc
+  bodies and output pins or bearings. They are preserved pair-by-pair rather
+  than waived.
 
 ## Risks / Trade-offs
 

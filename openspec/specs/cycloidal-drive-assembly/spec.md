@@ -1,4 +1,11 @@
-## ADDED Requirements
+# Cycloidal Drive Assembly Specification
+
+## Purpose
+
+Define the source ownership, authored placement, and mechanical integrity
+contracts for the V4 cycloidal-drive simulation.
+
+## Requirements
 
 ### Requirement: V4 product geometry remains upstream-owned
 The simulation SHALL import each uniquely selectable product used by the cycloidal mechanism from `V4/Cycloidal_V4_02.stp` without copying or redrawing its geometry, and SHALL explicitly report any source product that cannot be selected unambiguously.
@@ -29,8 +36,8 @@ The simulation SHALL prove the shaft/cam/bearing stack, cycloidal ring engagemen
 - **WHEN** the drive is at home
 - **THEN** the shaft, cam, and their bearing axes coincide with the +Y input axis within 0.01 mm
 
-#### Scenario: Source overlap inventory is stable
-- **WHEN** exact interference checks are run at every sampled pose
+#### Scenario: Source home-pose overlap inventory is stable
+- **WHEN** exact interference checks are run at the authored home pose
 - **THEN** the positive-volume overlap pairs and volumes equal the documented source-authored inventory
 
 #### Scenario: Imported products remain solid
