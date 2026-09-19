@@ -1,18 +1,18 @@
 # CycloidalDrive
 
-This repository now includes a solid-node simulation of the latest cycloidal
+This repository now includes a machinome simulation of the latest cycloidal
 revision, `V4/Cycloidal_V4_02.stp`. The simulation imports the original STEP
 geometry, preserves its authored placements, and drives the complete reducer
 from one `input_angle` control.
 
 ## Run the simulation
 
-Use a solid-node checkout or environment that provides the `solid` command,
+Use a machinome checkout or environment that provides the `solid` command,
 then run these commands from the repository root:
 
 ```sh
-solid build
-solid develop
+machinome build
+machinome develop
 ```
 
 The viewer exposes one control, `input_angle`, from 0 to 7200 degrees. The
@@ -36,18 +36,18 @@ a motor-speed claim.
 The fast development regression covers every simulation node file:
 
 ```sh
-SOLID_TEST_KERNEL=faceted solid test --faceted simulation/parts.py
-SOLID_TEST_KERNEL=faceted solid test --faceted simulation/subassemblies.py
-SOLID_TEST_KERNEL=faceted solid test --faceted simulation/machine.py
-solid build
+SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/parts.py
+SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/subassemblies.py
+SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/machine.py
+machinome build
 ```
 
 Run the exact certification once when the source or contracts change:
 
 ```sh
-SOLID_TEST_KERNEL=exact solid test --exact simulation/parts.py
-SOLID_TEST_KERNEL=exact solid test --exact simulation/subassemblies.py
-SOLID_TEST_KERNEL=exact solid test --exact simulation/machine.py
+SOLID_TEST_KERNEL=exact machinome test --exact simulation/parts.py
+SOLID_TEST_KERNEL=exact machinome test --exact simulation/subassemblies.py
+SOLID_TEST_KERNEL=exact machinome test --exact simulation/machine.py
 ```
 
 `python -m simulation.tools.probe` repeats the source inventory and radial

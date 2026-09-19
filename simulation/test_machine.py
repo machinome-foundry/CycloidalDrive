@@ -10,8 +10,8 @@ from itertools import combinations
 
 import trimesh
 
-from solid_node.simulation import ScenarioTest
-from solid_node.test import TestCase
+from machinome.simulation import ScenarioTest
+from machinome.test import TestCase
 
 from .layout import (
     DISC_ECCENTRICITY,

@@ -3,8 +3,8 @@
 # SPDX-FileCopyrightText: 2026 Luis Henrique Cassis Fagundes
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-from solid_node.node import AssemblyNode
-from solid_node.motion.joints import Orbit, Revolute
+from machinome.node import AssemblyNode
+from machinome.motion.joints import Orbit, Revolute
 
 from .layout import (
     DISC_PHASE,

@@ -3,8 +3,8 @@
 # SPDX-FileCopyrightText: 2026 Luis Henrique Cassis Fagundes
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-from solid_node.node import AssemblyNode
-from solid_node.simulation import Driver, Instruction
+from machinome.node import AssemblyNode
+from machinome.simulation import Driver, Instruction
 
 from .layout import (
     DEMO_INPUT_SPEED,

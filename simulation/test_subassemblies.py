@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2026 Luis Henrique Cassis Fagundes
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-from solid_node.test import TestCase
+from machinome.test import TestCase
 
 from .subassemblies import (
     Cam,
