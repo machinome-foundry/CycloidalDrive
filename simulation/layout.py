@@ -8,6 +8,8 @@ guarded by ``CycloidalDriveTest.test_v4_source_digest`` and documented in
 # SPDX-FileCopyrightText: 2026 Luis Henrique Cassis Fagundes
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+from machinome_mechanics import cycloidal_ratio
+
 SOURCE_SHA256 = "343b23d7e8ff4416e9a51121171a301fd77ce4353b371567bd1c0dfe15a18cc8"
 
 INPUT_AXIS = (0.0, 1.0, 0.0)
@@ -21,6 +23,7 @@ REAR_DISC_TRANSLATION = (0.782172325, 0.0, 0.061558297)
 DISC_LOBES = 20
 RING_PINS = 21
 REDUCTION_RATIO = DISC_LOBES // (RING_PINS - DISC_LOBES)
+OUTPUT_INPUT_RATIO = cycloidal_ratio(DISC_LOBES, RING_PINS)
 
 PULLEY_ROTATION = (-90.0, (1.0, 0.0, 0.0))
 PULLEY_TRANSLATION = (0.0, 81.0, 0.0)

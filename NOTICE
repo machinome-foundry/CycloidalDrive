@@ -22,8 +22,9 @@ metadata additions are licensed under GNU AGPL version 3 or later:
 - `simulation/test_machine.py`, `simulation/test_parts.py`,
   `simulation/test_subassemblies.py`, `simulation/tools/__init__.py`, and
   `simulation/tools/probe.py`;
-- `simulation/README.md`, `docs/measurements.md`, `CREDITS`, this `NOTICE`,
-  and the licensing section in `README.md`.
+- `simulation/README.md`, `docs/measurements.md`,
+  `docs/cycloidal-ratio-verification.md`, `docs/probes/cycloidal_ratio.py`,
+  `CREDITS`, this `NOTICE`, and the licensing section in `README.md`.
 
 Where those additions read, select, import, inspect, or record measurements of
 the upstream V4 STEP document, the upstream document and resulting

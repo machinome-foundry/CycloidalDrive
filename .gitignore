@@ -1,4 +1,5 @@
 _build*/
+.cache/cycloidal-ratio*
 screenshot.png
 snapshot*.png
 __pycache__/

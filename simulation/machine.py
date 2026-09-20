@@ -10,7 +10,7 @@ from .layout import (
     DEMO_INPUT_SPEED,
     ONE_INPUT_REVOLUTION,
     ONE_OUTPUT_REVOLUTION,
-    REDUCTION_RATIO,
+    OUTPUT_INPUT_RATIO,
 )
 
 from .subassemblies import (
@@ -38,9 +38,9 @@ class CycloidalDrive(AssemblyNode):
     input_angle.drives(input_stack.spin)
     input_angle.drives(front_discs.orbit)
     input_angle.drives(rear_discs.orbit)
-    input_angle.drives(front_discs.spin, ratio=-1.0 / REDUCTION_RATIO)
-    input_angle.drives(rear_discs.spin, ratio=-1.0 / REDUCTION_RATIO)
-    input_angle.drives(output_stack.spin, ratio=-1.0 / REDUCTION_RATIO)
+    input_angle.drives(front_discs.spin, ratio=OUTPUT_INPUT_RATIO)
+    input_angle.drives(rear_discs.spin, ratio=OUTPUT_INPUT_RATIO)
+    input_angle.drives(output_stack.spin, ratio=OUTPUT_INPUT_RATIO)
 
     instructions = {
         "Home": Instruction(
@@ -73,6 +73,6 @@ class ActuatedCycloidalDrive(AssemblyNode):
     input_angle.drives(input_stack.spin)
     input_angle.drives(front_discs.orbit)
     input_angle.drives(rear_discs.orbit)
-    input_angle.drives(front_discs.spin, ratio=-1.0 / REDUCTION_RATIO)
-    input_angle.drives(rear_discs.spin, ratio=-1.0 / REDUCTION_RATIO)
-    input_angle.drives(output_stack.spin, ratio=-1.0 / REDUCTION_RATIO)
+    input_angle.drives(front_discs.spin, ratio=OUTPUT_INPUT_RATIO)
+    input_angle.drives(rear_discs.spin, ratio=OUTPUT_INPUT_RATIO)
+    input_angle.drives(output_stack.spin, ratio=OUTPUT_INPUT_RATIO)

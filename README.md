@@ -7,8 +7,13 @@ from one `input_angle` control.
 
 ## Run the simulation
 
-Use a machinome checkout or environment that provides the `solid` command,
-then run these commands from the repository root:
+Use a machinome checkout or environment that provides the `machinome` command
+and a matching `machinome-mechanics` source checkout, then run these commands
+from the repository root. `machinome-mechanics` 0.1.0 is founded but currently
+unpublished, so it cannot yet be obtained from a package index. In the
+Machinome Studio source workspace, put both this project and the selected
+mechanics worktree on `PYTHONPATH`; validation does not repoint the shared
+installation.
 
 ```sh
 machinome build
