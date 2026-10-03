@@ -2,4 +2,4 @@
 model = "simulation.machine:CycloidalDrive"
 
 [tool.machinome-studio]
-profile = "builder"
+profile = "openspec-builder"
