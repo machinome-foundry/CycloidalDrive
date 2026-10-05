@@ -10,7 +10,8 @@ from pathlib import Path
 
 import cadquery as cq
 
-from machinome.node import CadQueryNode, StepNode
+from machinome.node.cadquery import CadQueryNode
+from machinome.node.step import StepNode
 
 from .layout import OUTPUT_PLATE_SOLID_INDEX, RING_HOUSING_SOLID_INDEX
 

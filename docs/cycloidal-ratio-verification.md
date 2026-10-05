@@ -78,8 +78,8 @@ The established full-machine commands were then attempted without weakening
 assertions or changing tolerances:
 
 ```sh
-SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/machine.py
-SOLID_TEST_KERNEL=exact machinome test --exact simulation/machine.py
+SOLID_TEST_ENGINE=mesh machinome test --mesh simulation/machine.py
+SOLID_TEST_ENGINE=brep machinome test --brep simulation/machine.py
 ```
 
 Both runs passed `test_assembly_integrity`, then the cgroup killed the process

@@ -13,7 +13,7 @@ machinome-mechanics source worktree on ``PYTHONPATH``.
 from math import isclose
 
 from machinome.core.expressions import parse, render
-from machinome.scad_expression import get_animation_time
+from machinome.expression_graph import get_animation_time
 
 from simulation.layout import (
     DISC_LOBES,

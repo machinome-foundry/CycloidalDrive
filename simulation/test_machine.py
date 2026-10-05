@@ -46,7 +46,7 @@ class CycloidalDriveTest(TestCase):
 
     def test_assembly_integrity(self):
         self.node.set_state(input_angle=0.0)
-        if os.environ.get("SOLID_TEST_KERNEL") == "exact":
+        if os.environ.get("SOLID_TEST_ENGINE") == "brep":
             groups = {
                 "shaft": self.node.input_stack.drive_shaft.bodies,
                 "cam": self.node.input_stack.cam.bodies,
@@ -112,7 +112,7 @@ class CycloidalDriveTest(TestCase):
             minimum_gap = float(distances.min())
             self.assertGreater(minimum_gap, 0.8)
             self.assertLess(minimum_gap, 1.0)
-            if os.environ.get("SOLID_TEST_KERNEL") == "exact":
+            if os.environ.get("SOLID_TEST_ENGINE") == "brep":
                 self.assertNotIntersecting(disc, self.node.fixed_ring.housing)
 
     def test_output_pin_and_bearing_sites_are_coaxial(self):

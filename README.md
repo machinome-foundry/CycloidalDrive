@@ -41,18 +41,18 @@ a motor-speed claim.
 The fast development regression covers every simulation node file:
 
 ```sh
-SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/parts.py
-SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/subassemblies.py
-SOLID_TEST_KERNEL=faceted machinome test --faceted simulation/machine.py
+SOLID_TEST_ENGINE=mesh machinome test --mesh simulation/parts.py
+SOLID_TEST_ENGINE=mesh machinome test --mesh simulation/subassemblies.py
+SOLID_TEST_ENGINE=mesh machinome test --mesh simulation/machine.py
 machinome build
 ```
 
 Run the exact certification once when the source or contracts change:
 
 ```sh
-SOLID_TEST_KERNEL=exact machinome test --exact simulation/parts.py
-SOLID_TEST_KERNEL=exact machinome test --exact simulation/subassemblies.py
-SOLID_TEST_KERNEL=exact machinome test --exact simulation/machine.py
+SOLID_TEST_ENGINE=brep machinome test --brep simulation/parts.py
+SOLID_TEST_ENGINE=brep machinome test --brep simulation/subassemblies.py
+SOLID_TEST_ENGINE=brep machinome test --brep simulation/machine.py
 ```
 
 `python -m simulation.tools.probe` repeats the source inventory and radial
