@@ -117,7 +117,7 @@ whose default driver is 1,890 degrees:
 
 ```sh
 /usr/bin/time -v machinome snapshot \
-  simulation.machine:ActuatedCycloidalDrive --renderer web \
+  simulation.machine:ActuatedCycloidalDrive --viewer web \
   --autocenter --viewall --imgsize 1280x720 \
   -o .cache/cycloidal-ratio-driven-web.png
 ```
