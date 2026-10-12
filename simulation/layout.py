@@ -8,7 +8,7 @@ guarded by ``CycloidalDriveTest.test_v4_source_digest`` and documented in
 # SPDX-FileCopyrightText: 2026 Luis Henrique Cassis Fagundes
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-from machinome_mechanics import cycloidal_ratio
+from machinome.mechanics import cycloidal_ratio
 
 SOURCE_SHA256 = "343b23d7e8ff4416e9a51121171a301fd77ce4353b371567bd1c0dfe15a18cc8"
 
